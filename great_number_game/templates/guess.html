@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Guess the number!</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Guess the number!</h1>
+            {% if session['try_number'] == 1 %}
+            <p>I thought of a number from 1 to 100. Can you guess it?</p>
+            {% elif session['guess'] < session['answer'] %}
+            <p class="hint">Too Low!</p>
+            {% elif session['guess'] > session['answer'] %}
+            <p class="hint">Too High!</p>
+            {% endif %}
+            <form action="/process" method="post">
+                Try #{{ session['try_number'] }}: <input type="text" name="guess">
+                <input type="submit" value="Guess">
+            </form>
+        </div><!-- /#wrapper  -->
+    </body>
+</html>

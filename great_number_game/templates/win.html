@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Guess the number: You win!</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Guess the number!</h1>
+            <div id="win">
+                <p>Congratulations, {{ session['answer'] }} is the correct number.</p>
+                <p><a href="{{ url_for('index') }}">Play again</a></p>
+            </div><!-- /#win  -->
+        </div><!-- /#wrapper  -->
+    </body>
+</html>
