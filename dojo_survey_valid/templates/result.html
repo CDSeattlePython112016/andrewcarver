@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dojo Survey Index</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+   <body>
+    <div id="wrapper">
+    <div id="left">
+        <h2>Submitted Info</h2>
+        <p>Name:</p>
+        <p>Dojo Location:</p>
+        <p>Favorite Language:</p>
+        <p>Comment:</p>
+    </div><!-- /#left  -->
+    <div id="right">
+        <p>{{ session['name'] }}</p>
+        <p>{{ session['location'] }}</p>
+        <p>{{ session['language'] }}</p>
+        <p>{{ session['comment'] }}</p>
+    </div><!-- /#right  -->
+    </div><!-- /#wrapper  -->
+    
+  </body>
+</body>
+</html>

@@ -1,0 +1,46 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper {
+    height: 100%;
+    width: 100%;
+    margin: 60px 0px 0px 100px;
+}
+
+#labels {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#labelforms {
+    display: inline-block;
+    vertical-align: top;
+}
+
+select {
+    display: block;
+    width: 150px;
+}
+
+textarea {
+    width: 280px;
+}
+
+#left {
+    display: inline-block;   
+}
+
+#left h2 {
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+#left p, #right p {
+    margin-left: 20px;
+}
+
+#right {
+    display: inline-block;
+}
