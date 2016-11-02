@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Registration</h1>
+        <form action="/process" id="dojo" method='post'>
+            <div id="labels">
+                <p>Email:</p>
+                <p>First Name:</p>
+                <p>Last Name:</p>
+                <!-- <p>Birthdate (mm/dd/yyyy):</p> -->
+                <p>Password:</p>
+                <p>Confirm Password:</p>
+            </div>
+            <div id="labelforms">
+                <input type="text" name="email">
+                <input type="text" name="first_name">
+                <input type="text" name="last_name">
+                <!-- <input type="text" name="birthdate"> -->
+                <input type="text" name="password">
+                <input type="text" name="confirm_password">
+            </div>
+        </form>
+        <button type="submit" form="dojo">Submit</button>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div><!-- /#wrapper  -->
+</body>
+</html>
