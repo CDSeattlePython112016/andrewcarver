@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    {% if turturs == True %}
+        <h1>Here is the team, see if you can find them individually!</h1>
+        <img src="/static/img/group.jpg" alt="">
+    {% endif %}
+    {% if turturs == False %}
+        {% if color == 'red' %}
+            <h1>You found Raphael!</h1>
+            <img src="/static/img/raph.jpg" alt="">
+        {% elif color == 'blue' %}
+            <h1>You found Leonardo!</h1>
+            <img src="/static/img/leo.jpg" alt="">
+        {% elif color == 'orange' %}
+            <h1>You found Mikey!</h1>
+            <img src="/static/img/mikey.jpg" alt="">
+        {% elif color == 'purple' %}
+            <h1>You found Donatello!</h1>
+            <img src="/static/img/don.jpg" alt="">    
+        {% elif color == 'pizza' %}  
+            <h1>You found their favorite food!</h1>
+            <img src="/static/img/pizza.jpg" alt="">
+        {% else %}
+            <h1>You found April!</h1>
+            <img src="/static/img/megan_fox.jpg" alt="">
+        {% endif %}
+    {% endif %}
+</body>
+</html>
