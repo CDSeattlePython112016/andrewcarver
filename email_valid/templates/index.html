@@ -1,0 +1,24 @@
+<html>
+    <head>
+       <title>Email Form</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    </head>
+    <body>
+      <div id="container">
+        <div id="main">
+          <h1>Enter Email</h1>
+              {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  {% for message in messages %}
+                    <p>{{message}}</p>
+                  {% endfor %}
+                {% endif %}
+              {% endwith %}
+          <form action="/process" method="post">
+            <input type="text" name="email">
+            <input type="submit" name="Submit">
+          </form>
+        </div><!--  /#main -->
+      </div><!-- /#container  -->
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+       <title>Dojo Survey - Submit</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    </head>
+    <body>
+      <div id="container">
+        <div id="main">
+          <p class="green_alert">Success! The email address you entered {{session['email']}} now belongs to us along with all of your personal information. Thank you! :)</p>    
+          <h4>Email Addresses Entered</h4>
+          <div class="email_list">
+            {% for email in all_emails: %}
+               <p>{{ email['email']}} {{ email['created_at'] }}</p>
+            {% endfor %}
+          </div><!--  /.email_list -->
+          <form action="/">
+              <input type="submit" value="Go Back" />
+          </form>
+        </div><!--  /.form_card -->
+      </div><!-- /#container  -->
+    </body>
+</html>
