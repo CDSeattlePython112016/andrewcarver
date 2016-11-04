@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="main">
+        <h2>Add a Friend</h2>
+          <form action='/friends' method='post'>
+              <label for="first_name">First Name:
+                  <input type="text" name="first_name" id="first_name">
+              </label>
+              <label for="last_name">Last Name:
+                  <input type="text" name="last_name" id="last_name">
+              </label>
+              <label for="email">Email:
+                  <input type="text" name="email" id="email">
+              </label>
+              <input type="submit" value="Add">
+          </form>
+        <h1>FRIENDS:</h1>
+        <div id="user_list">
+        {% for friend in all_friends: %}
+        <form action="/friends/{{ friend['id'] }}/edit">
+            <p>First Name: {{ friend['first_name'] }}</p>
+            <p>Last Name: {{ friend['last_name'] }}</p>
+            <p>Email: {{ friend['email'] }}</p>
+            <input type="hidden" name="friend" value="{{ friend['id'] }}">
+            <input type="submit" name="Edit" value="Edit">
+        </form>
+        <form action="/friends/{{ friend['id'] }}/delete" method="post">
+            <input type="submit"  name="Delete" value="Delete">
+        </form>
+      {% endfor %}
+      </div><!--  /#user_list -->
+    </div><!-- /#main  -->
+</body>
+</html>
