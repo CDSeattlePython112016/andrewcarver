@@ -1,0 +1,11 @@
+#wrapper {
+    width: 500px;
+    margin: 250px auto;
+    text-align: center;
+}
+h1 {
+    border: 1px solid black;
+    width: 270px;
+    height: 45px;
+    margin: 0 auto 20px;
+}
